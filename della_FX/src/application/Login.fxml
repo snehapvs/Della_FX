@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="424.0" prefWidth="595.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane prefHeight="424.0" prefWidth="595.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.Login_controller">
   <!-- TODO Add Nodes -->
   <children>
     <Button fx:id="login" layoutX="298.0" layoutY="242.0" mnemonicParsing="false" onAction="#performlogin" text="Login" />

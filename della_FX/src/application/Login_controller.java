@@ -25,7 +25,7 @@ public class Login_controller implements Initializable {
 
 	public TextField password;
 	public Button login;
-	void performlogin(){
+	public void performlogin(){
 		
 		System.out.print("okkkk ");
 		controller c=new controller();
