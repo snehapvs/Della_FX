@@ -1,20 +1,24 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			 Parent parent = FXMLLoader.load(getClass().getResource("Login_controller.fxml"));//ur fxml file name
+		        Scene scene = new Scene(parent);
+		        primaryStage.setTitle("Dellaaa");
+		        primaryStage.setScene(scene);
+		        primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

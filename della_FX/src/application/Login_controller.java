@@ -27,7 +27,9 @@ public class Login_controller implements Initializable {
 	public Button login;
 	void performlogin(){
 		
-		
+		System.out.print("okkkk ");
+		controller c=new controller();
+		c.initialize(null, null);
 		
 	}
 
