@@ -34,15 +34,15 @@ public class Login_controller implements Initializable {
 	}
 
 	public TextField username;
-public AnchorPane LoginScreen;
+	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
 	public void performlogin(){
 		Stage primaryStage = new Stage();
 		System.out.print("okkkk ");
 		Stage stage = (Stage) login.getScene().getWindow();
-	    // do what you have to do
-	    stage.close();
+		// do what you have to do
+		stage.close();
 		try {
 
 			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
@@ -50,9 +50,9 @@ public AnchorPane LoginScreen;
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		//	LoginScreen
+			//	LoginScreen
 			//parent.setVisible(false);
-			
+
 
 		} catch(Exception e) {
 			e.printStackTrace();
