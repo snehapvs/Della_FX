@@ -1,5 +1,5 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -15,17 +15,17 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			 Parent parent = FXMLLoader.load(getClass().getResource("Login.fxml"));//ur fxml file name
-		        Scene scene = new Scene(parent);
-		        primaryStage.setTitle("Dellaaa");
-		        primaryStage.setScene(scene);
-		        primaryStage.show();
+			Parent parent = FXMLLoader.load(getClass().getResource("Login.fxml"));//ur fxml file name
+			Scene scene = new Scene(parent);
+			primaryStage.setTitle("Dellaaa");
+			primaryStage.setScene(scene);
+			primaryStage.show();
 
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}

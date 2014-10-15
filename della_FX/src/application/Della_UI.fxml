@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="518.0" prefWidth="669.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane prefHeight="518.0" prefWidth="669.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
   <!-- TODO Add Nodes -->
   <children>
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="525.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE">
