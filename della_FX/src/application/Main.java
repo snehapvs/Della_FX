@@ -14,11 +14,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+
 			 Parent parent = FXMLLoader.load(getClass().getResource("Login.fxml"));//ur fxml file name
 		        Scene scene = new Scene(parent);
 		        primaryStage.setTitle("Dellaaa");
 		        primaryStage.setScene(scene);
 		        primaryStage.show();
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
