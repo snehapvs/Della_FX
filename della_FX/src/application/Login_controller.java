@@ -58,16 +58,20 @@ public class Login_controller implements Initializable {
 			password.setText("");
 		}
 		try {
-
 			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
 			Scene scene = new Scene(parent);
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+<<<<<<< HEAD
+		//	LoginScreen
+			//parent.setVisible(false);			
+=======
 			//	LoginScreen
 			//parent.setVisible(false);
 
 
+>>>>>>> origin/master
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
