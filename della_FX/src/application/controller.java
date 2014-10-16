@@ -13,6 +13,10 @@ public class controller implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
 
+<<<<<<< HEAD
+=======
+	//	disable();
+>>>>>>> origin/master
 		
 		
 	}
