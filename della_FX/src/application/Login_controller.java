@@ -34,7 +34,7 @@ public class Login_controller implements Initializable {
 	}
 
 	public TextField username;
-public AnchorPane LoginScreen;
+	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
 	public void performlogin(){
@@ -44,16 +44,13 @@ public AnchorPane LoginScreen;
 	    // do what you have to do
 	    stage.close();
 		try {
-
 			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
 			Scene scene = new Scene(parent);
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		//	LoginScreen
-			//parent.setVisible(false);
-			
-
+			//parent.setVisible(false);			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
