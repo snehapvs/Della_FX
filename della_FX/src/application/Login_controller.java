@@ -80,6 +80,7 @@ public class Login_controller implements Initializable {
 			if(rs.next() && rs.getString(2).equals(text2))
 			{
 				System.out.println("login succesfully");
+				
 				return true;
 			}
 		} catch (SQLException e) {
