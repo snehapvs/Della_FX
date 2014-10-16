@@ -37,6 +37,7 @@ public class Login_controller implements Initializable {
 		Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
 		stage.close();
+
 		while(!flag)
 		{
 			flag=checkLogin(username.getText(),password.getText());
@@ -57,6 +58,7 @@ public class Login_controller implements Initializable {
 			}
 			password.setText("");
 		}
+
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
 			Scene scene = new Scene(parent);
