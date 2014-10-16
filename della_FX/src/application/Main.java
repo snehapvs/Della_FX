@@ -1,16 +1,23 @@
 package application;
 
+import java.sql.Statement;
+
+import database_connection.DBConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	private static Statement stmt=null ;
+	
+	protected static Statement getStmt() {
+		return stmt;
+	}
+
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -27,6 +34,12 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
+		try {
+			stmt= (Statement) DBConnection.getConnection().createStatement();
+		} catch (Exception e) {
+			System.err.println("problem with ");
+			e.printStackTrace();
+		}
 		launch(args);
 	}
 }
