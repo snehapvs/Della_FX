@@ -31,12 +31,7 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-	private Button update_action;
-
-	public void disable()
-	{
-		update_action.setVisible(false);
-	}
+	
 
 	
 	public void performlogin(){
@@ -45,6 +40,16 @@ public class Login_controller implements Initializable {
 		Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
 		stage.close();
+		try {
+			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
+			Scene scene = new Scene(parent);
+			primaryStage.setTitle("Dellaaa");
+			primaryStage.setScene(scene);
+			primaryStage.show();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 
 		while(!flag)
 		{
@@ -56,10 +61,11 @@ public class Login_controller implements Initializable {
 			{
 				try {
 					Date d= new Date();
+					controller c=new controller();
 					Timestamp stamp= new Timestamp(d.getTime());
 					System.out.println(stamp.toString());
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
-					disable();
+					c.disable();
 				} catch (SQLException e) {
 					
 					e.printStackTrace();
@@ -68,16 +74,7 @@ public class Login_controller implements Initializable {
 			password.setText("");
 		}
 
-		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
-			Scene scene = new Scene(parent);
-			primaryStage.setTitle("Dellaaa");
-			primaryStage.setScene(scene);
-			primaryStage.show();
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+	
 	}
 
 	private Statement stmt=null;
