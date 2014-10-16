@@ -63,15 +63,7 @@ public class Login_controller implements Initializable {
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-<<<<<<< HEAD
-		//	LoginScreen
-			//parent.setVisible(false);			
-=======
-			//	LoginScreen
-			//parent.setVisible(false);
 
-
->>>>>>> origin/master
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
