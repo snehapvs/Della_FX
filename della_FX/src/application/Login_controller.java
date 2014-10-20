@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class Login_controller implements Initializable {
@@ -61,9 +62,11 @@ public class Login_controller implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			scene.setRoot(root);
+			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
 
 			controller c=fxmlLoader.getController();
 			//c.disable_button();//function
