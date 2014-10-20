@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -34,8 +35,7 @@ public class Login_controller implements Initializable {
 	public Button login;
 	public  controller c;
 
-
-	public void performlogin(ActionEvent event){
+	public void performlogin(){
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
 		Stage stage = (Stage) login.getScene().getWindow();
@@ -49,12 +49,13 @@ public class Login_controller implements Initializable {
 			//			primaryStage.show();
 
 
-			Node node = (Node) event.getSource();
-			Stage stag = (Stage) node.getScene().getWindow();
-			Scene scene = stag.getScene();
+//			Node node = (Node) event.getSource();
+//			Stage stag = (Stage) node.getScene().getWindow();
+//			Scene scene = stag.getScene();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
+			Scene scene=new Scene(root);
 			scene.setRoot(root);
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
