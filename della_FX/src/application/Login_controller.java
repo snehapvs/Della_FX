@@ -34,19 +34,17 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-<<<<<<< HEAD
+
 
 	
 
 
 
-	public void performlogin(ActionEvent event){
 
-=======
 	public  controller c;
 
 	public void performlogin(){
->>>>>>> 8a2dad699be68ee765492ffd3efbc3ae0aa498bd
+
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
 		Stage stage = (Stage) login.getScene().getWindow();
