@@ -61,7 +61,7 @@ public class Login_controller implements Initializable {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
-			controller c=fxmlLoader.getController();
+			 c=fxmlLoader.getController();
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -76,9 +76,9 @@ public class Login_controller implements Initializable {
 			}else
 			{
 				try {
-					int row=stmt.executeUpdate("SELECT * FROM USERLOG WHERE lockstatus=1;");
+					ResultSet row=stmt.executeQuery("SELECT * FROM USERLOG WHERE lockstatus=1;");
 					
-					if(row==0)
+					if(!row.next())
 					{
 					Date d= new Date();
 					Timestamp stamp= new Timestamp(d.getTime());
