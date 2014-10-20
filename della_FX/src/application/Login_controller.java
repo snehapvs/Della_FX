@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -34,6 +34,7 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
+<<<<<<< HEAD
 
 	
 
@@ -41,6 +42,11 @@ public class Login_controller implements Initializable {
 
 	public void performlogin(ActionEvent event){
 
+=======
+	public  controller c;
+
+	public void performlogin(){
+>>>>>>> 8a2dad699be68ee765492ffd3efbc3ae0aa498bd
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
 		Stage stage = (Stage) login.getScene().getWindow();
@@ -55,12 +61,13 @@ public class Login_controller implements Initializable {
 			//			primaryStage.show();
 
 
-			Node node = (Node) event.getSource();
-			Stage stag = (Stage) node.getScene().getWindow();
-			Scene scene = stag.getScene();
+//			Node node = (Node) event.getSource();
+//			Stage stag = (Stage) node.getScene().getWindow();
+//			Scene scene = stag.getScene();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
+			Scene scene=new Scene(root);
 			scene.setRoot(root);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setTitle("Dellaaa");
@@ -68,9 +75,7 @@ public class Login_controller implements Initializable {
 			primaryStage.show();
 			
 
-			controller c=fxmlLoader.getController();
-			//c.disable_button();//function
-			c.disable();
+			 c=fxmlLoader.getController();
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -85,13 +90,24 @@ public class Login_controller implements Initializable {
 			}else
 			{
 				try {
+					ResultSet row=stmt.executeQuery("SELECT * FROM USERLOG WHERE lockstatus=1;");
+					
+					if(!row.next())
+					{
 					Date d= new Date();
-					controller c=new controller();
 					Timestamp stamp= new Timestamp(d.getTime());
 					System.out.println(stamp.toString());
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
+<<<<<<< HEAD
 
 				
+=======
+					}
+					else{
+						
+						c.disable();
+					}
+>>>>>>> 8a2dad699be68ee765492ffd3efbc3ae0aa498bd
 				} catch (SQLException e) {
 
 					e.printStackTrace();

@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="525.0" prefWidth="723.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
   <!-- TODO Add Nodes -->
   <children>
-    <TabPane layoutX="-38.0" layoutY="0.0" prefHeight="525.0" prefWidth="717.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="-38.0" layoutY="0.0" prefHeight="525.0" prefWidth="747.0001220703125" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Console">
           <content>
