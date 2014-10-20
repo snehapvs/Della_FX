@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -33,7 +32,7 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-
+	public  controller c;
 
 
 	public void performlogin(ActionEvent event){
@@ -62,8 +61,6 @@ public class Login_controller implements Initializable {
 			primaryStage.show();
 
 			controller c=fxmlLoader.getController();
-			//c.disable_button();//function
-			c.disable();
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -78,12 +75,19 @@ public class Login_controller implements Initializable {
 			}else
 			{
 				try {
+					int row=stmt.executeUpdate("SELECT * FROM USERLOG WHERE lockstatus=1;");
+					
+					if(row==0)
+					{
 					Date d= new Date();
-					controller c=new controller();
 					Timestamp stamp= new Timestamp(d.getTime());
 					System.out.println(stamp.toString());
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
-					c.disable();
+					}
+					else{
+						
+						c.disable();
+					}
 				} catch (SQLException e) {
 
 					e.printStackTrace();
