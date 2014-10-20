@@ -36,12 +36,17 @@ public class Login_controller implements Initializable {
 	public Button login;
 
 
+
 	
 
 
 
 
 	public  controller c;
+
+	
+
+	
 
 	public void performlogin(){
 
@@ -96,16 +101,11 @@ public class Login_controller implements Initializable {
 					Timestamp stamp= new Timestamp(d.getTime());
 					System.out.println(stamp.toString());
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
-<<<<<<< HEAD
-
-				
-=======
-					}
+		}
 					else{
 						
 						c.disable();
 					}
->>>>>>> 8a2dad699be68ee765492ffd3efbc3ae0aa498bd
 				} catch (SQLException e) {
 
 					e.printStackTrace();

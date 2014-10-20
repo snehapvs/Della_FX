@@ -14,11 +14,6 @@ public class controller implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8a2dad699be68ee765492ffd3efbc3ae0aa498bd
 	}
 	
 	
