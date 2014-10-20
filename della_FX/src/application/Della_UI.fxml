@@ -7,14 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<<<<<<< HEAD
-<AnchorPane fx:id="controller" prefHeight="518.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller">
-=======
-<AnchorPane prefHeight="518.0" prefWidth="669.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
->>>>>>> origin/master
+<AnchorPane prefHeight="518.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller">
+
   <!-- TODO Add Nodes -->
   <children>
-    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="525.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="-38.0" prefHeight="525.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Console">
           <content>
@@ -225,7 +222,7 @@
             </AnchorPane>
           </content>
         </Tab>
-        <Tab text="Team">
+        <Tab text="Teams">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
           </content>

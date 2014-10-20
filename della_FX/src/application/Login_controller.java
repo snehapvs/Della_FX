@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,21 +33,37 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-	
 
-	
-	public void performlogin(){
+
+
+	public void performlogin(ActionEvent event){
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
 		Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
 		stage.close();
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
-			Scene scene = new Scene(parent);
+			//			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
+			//			Scene scene = new Scene(parent);
+			//			primaryStage.setTitle("Dellaaa");
+			//			primaryStage.setScene(scene);
+			//			primaryStage.show();
+
+
+			Node node = (Node) event.getSource();
+			Stage stag = (Stage) node.getScene().getWindow();
+			Scene scene = stag.getScene();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			scene.setRoot(root);
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+
+			controller c=fxmlLoader.getController();
+			//c.disable_button();//function
+			c.disable();
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -67,26 +85,26 @@ public class Login_controller implements Initializable {
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
 					c.disable();
 				} catch (SQLException e) {
-					
+
 					e.printStackTrace();
 				}
 			}
 			password.setText("");
 		}
 
-	
+
 	}
 
 	private Statement stmt=null;
 	private boolean checkLogin(String text, String text2) {
-		 stmt=Main.getStmt();
+		stmt=Main.getStmt();
 		try {
 			ResultSet rs;
 			rs=stmt.executeQuery("select * from registeredUser where username= '" +text+"' ;");
 			if(rs.next() && rs.getString(2).equals(text2))
 			{
 				System.out.println("login succesfully");
-				
+
 				return true;
 			}
 		} catch (SQLException e) {
