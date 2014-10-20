@@ -31,14 +31,6 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-	private Button update_action;
-
-	public void disable()
-	{
-		update_action.setVisible(false);
-	}
-
-	
 	public void performlogin(){
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
@@ -59,7 +51,6 @@ public class Login_controller implements Initializable {
 					Timestamp stamp= new Timestamp(d.getTime());
 					System.out.println(stamp.toString());
 					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
-					disable();
 				} catch (SQLException e) {
 					
 					e.printStackTrace();
@@ -89,7 +80,6 @@ public class Login_controller implements Initializable {
 			if(rs.next() && rs.getString(2).equals(text2))
 			{
 				System.out.println("login succesfully");
-				
 				return true;
 			}
 		} catch (SQLException e) {
