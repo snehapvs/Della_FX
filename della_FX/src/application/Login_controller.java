@@ -35,18 +35,7 @@ public class Login_controller implements Initializable {
 	public TextField password;
 	public Button login;
 
-
-
-
-
-
-
-
 	public  controller c;
-
-
-
-
 
 	public void performlogin(){
 
