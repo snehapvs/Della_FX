@@ -200,14 +200,14 @@
             </AnchorPane>
           </content>
         </Tab>
-        <Tab text="Members">
+        <Tab fx:id="AddToList_Members" onSelectionChanged="#AddToList_Members" text="Members">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <Button layoutX="292.0" layoutY="41.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="126.0" text="Add to List-&gt;" />
-                <Button layoutX="292.0" layoutY="95.0" mnemonicParsing="false" prefHeight="37.0" text="&lt;-Remove from List" />
-                <Button layoutX="292.0" layoutY="319.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="138.0" text="Add affiliation-&gt;" />
-                <Button layoutX="291.0" layoutY="368.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="138.0" text="&lt;-Remove affiliation" />
+                <Button fx:id="AddToList_Members" layoutX="292.0" layoutY="41.0" mnemonicParsing="false" onAction="#AddToList_Members" prefHeight="37.0" prefWidth="126.0" text="Add to List-&gt;" />
+                <Button fx:id="Remove_Members" layoutX="292.0" layoutY="95.0" mnemonicParsing="false" onAction="#Remove_Members" prefHeight="37.0" text="&lt;-Remove from List" />
+                <Button fx:id="AddAffliation_Members" layoutX="292.0" layoutY="319.0" mnemonicParsing="false" onAction="#AddAffliation_Members" prefHeight="37.0" prefWidth="138.0" text="Add affiliation-&gt;" />
+                <Button fx:id="RemoveAffliation_Members" layoutX="291.0" layoutY="368.0" mnemonicParsing="false" onAction="#RemoveAffliation_Members" prefHeight="37.0" prefWidth="138.0" text="&lt;-Remove affiliation" />
                 <Label layoutX="22.0" layoutY="24.0" text="Name of someone new (Last, First Middle)" />
                 <TextField layoutX="23.0" layoutY="45.0" prefHeight="26.0" prefWidth="211.0" />
                 <ListView layoutX="469.0" layoutY="33.0" prefHeight="160.0" prefWidth="200.0" />
@@ -255,10 +255,10 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="693.0001220703125">
               <children>
-                <Button layoutX="292.0" layoutY="41.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="126.0" text="Add to List-&gt;" />
-                <Button layoutX="292.0" layoutY="95.0" mnemonicParsing="false" prefHeight="37.0" text="&lt;-Remove from List" />
-                <Button layoutX="292.0" layoutY="319.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="138.0" text="Add association-&gt;" />
-                <Button layoutX="291.0" layoutY="368.0" mnemonicParsing="false" prefHeight="37.0" text="&lt;-Remove association" />
+                <Button fx:id="AddToList_Team" layoutX="292.0" layoutY="41.0" mnemonicParsing="false" onAction="#AddToList_Team" prefHeight="37.0" prefWidth="126.0" text="Add to List-&gt;" />
+                <Button fx:id="Remove_Team" layoutX="292.0" layoutY="95.0" mnemonicParsing="false" onAction="#Remove_Team" prefHeight="37.0" text="&lt;-Remove from List" />
+                <Button fx:id="AddAssociation_Team" layoutX="292.0" layoutY="319.0" mnemonicParsing="false" onAction="#AddAssociation_Team" prefHeight="37.0" prefWidth="138.0" text="Add association-&gt;" />
+                <Button fx:id="RemoveAssociation_Team" layoutX="291.0" layoutY="368.0" mnemonicParsing="false" onAction="#RemoveAssociation_Team" prefHeight="37.0" text="&lt;-Remove association" />
                 <Label layoutX="22.0" layoutY="24.0" text="Name of new Team" />
                 <TextField layoutX="23.0" layoutY="45.0" prefHeight="26.0" prefWidth="211.0" />
                 <ListView layoutX="469.0" layoutY="33.0" prefHeight="160.0" prefWidth="200.0" />
