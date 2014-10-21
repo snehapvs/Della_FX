@@ -27,7 +27,12 @@ public class controller implements Initializable
 	public Button clear_actionItem;
 	public Button create_actionItem;
 	public Button delete_actionItem;
+<<<<<<< HEAD
 	public TextField username;
+=======
+	
+	public TextField username;
+>>>>>>> origin/master
 	
 	@FXML
 	public Button AddToList_Members;
@@ -41,6 +46,10 @@ public class controller implements Initializable
 	public Button RemoveAssociation_Team;
 	
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 	public  void disable()
 	{
 		System.out.println("in disable function");
