@@ -7,15 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="518.0" prefWidth="669.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
-<AnchorPane prefHeight="560.0" prefWidth="761.000199999995" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller">
+<AnchorPane prefHeight="560.0" prefWidth="761.000199999995" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
   <!-- TODO Add Nodes -->
   <children>
-    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="525.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE">
-    <TabPane layoutX="1.0" prefHeight="515.0" prefWidth="748.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="525.0" prefWidth="738.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab onSelectionChanged="#ConsoleScreen" text="Console">
-       <Tab onSelectionChanged="#ConsoleScreen" text="Console">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
@@ -188,14 +185,6 @@
                 <Label font="$x1" layoutX="27.0" layoutY="14.0" text="Action Items:" />
                 <Label layoutX="27.0" layoutY="60.0" prefWidth="413.0" text="Select an Action Item from the pull-down list above to examine and update it.">
                   <font>
-                   <font> 
-                   <font>
-                    <font>
-                    <font>
-                    <Font size="10.0" />
-                     <Font size="10.0" />
-                     <Font size="10.0" />
-                   <Font size="10.0" />
                     <Font size="10.0" fx:id="x2" />
                   </font>
                 </Label>
@@ -217,27 +206,9 @@
             </AnchorPane>
           </content>
         </Tab>
-
         <Tab text="Members">
-          <Tab text="Members">
-        <Tab fx:id="AddToList_Members" onSelectionChanged="#AddToList_Members" text="Members">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-          </content>
-        </Tab>
-        <Tab text="Team">
-        <Tab text="Quit">
-        <Tab text="Teams">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-
-        <Tab fx:id="AddToList_Members" onSelectionChanged="#AddToList_Members" text="Members">
-
-        <Tab text="Members">
-
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="747.000244140625">
               <children>
                 <Button fx:id="AddToList_Members" layoutX="292.0" layoutY="41.0" mnemonicParsing="false" onAction="#AddToList_Members" prefHeight="37.0" prefWidth="126.0" text="Add to List-&gt;" />
                 <Button fx:id="Remove_Members" layoutX="292.0" layoutY="95.0" mnemonicParsing="false" onAction="#Remove_Members" prefHeight="37.0" text="&lt;-Remove from List" />
