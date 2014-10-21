@@ -41,9 +41,9 @@ public class Login_controller implements Initializable {
 
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
-		Stage stage = (Stage) login.getScene().getWindow();
+		//	Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
-		stage.close();
+		//stage.close();
 
 		try {
 			//			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
@@ -53,9 +53,9 @@ public class Login_controller implements Initializable {
 			//			primaryStage.show();
 
 
-//			Node node = (Node) event.getSource();
-//			Stage stag = (Stage) node.getScene().getWindow();
-//			Scene scene = stag.getScene();
+			//			Node node = (Node) event.getSource();
+			//			Stage stag = (Stage) node.getScene().getWindow();
+			//			Scene scene = stag.getScene();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
@@ -65,34 +65,35 @@ public class Login_controller implements Initializable {
 			primaryStage.setTitle("Dellaaa");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			
 
-			 c=fxmlLoader.getController();
+
+			c=fxmlLoader.getController();
 
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 
-		while(!flag)
+//		while(!flag)
 		{
 			flag=checkLogin(username.getText(),password.getText());
 			if(!flag)
 			{
 				System.out.println("invaid username or password");
+				System.exit(1);
 			}else
 			{
 				try {
 					ResultSet row=stmt.executeQuery("SELECT * FROM USERLOG WHERE lockstatus=1;");
-					
+					//System.out.println(row.next());
 					if(!row.next())
 					{
-					Date d= new Date();
-					Timestamp stamp= new Timestamp(d.getTime());
-					System.out.println(stamp.toString());
-					stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
-		}
+						Date d= new Date();
+						Timestamp stamp= new Timestamp(d.getTime());
+						System.out.println(stamp.toString());
+						stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
+					}
 					else{
-						
+
 						c.disable();
 					}
 				} catch (SQLException e) {

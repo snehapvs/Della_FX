@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,20 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+
 public class controller implements Initializable
 {
+
+
+	
 
 
 	@Override
@@ -30,12 +43,46 @@ public class controller implements Initializable
 	}
 
 
+
 	public Button button_action;
+
+	
+	public Button update_actionItem;
+	public Button quit;
+	public Button clear_actionItem;
+	public Button create_actionItem;
+	public Button delete_actionItem;
+	
 
 	public  void disable()
 	{
 		System.out.println("in disable function");
 		button_action.setDisable(true);
+		update_actionItem.setDisable(true);
+		clear_actionItem.setDisable(true);
+		create_actionItem.setDisable(true);
+		delete_actionItem.setDisable(true);
+	}
+	public void update_actionItem(){}
+	public void clearForm_actionItem()
+	{}
+	public void createNew_actionItem()
+	{}
+	public void deleteItem_actionItem()
+	{}
+	public void quitWindow()
+	{
+		Statement stmt= Main.getStmt();
+		try {
+			int row=stmt.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1;");
+			if(row!=0)
+				System.out.println("Successful updation into userlog");
+			Stage st= (Stage)quit.getScene().getWindow();
+			st.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 
