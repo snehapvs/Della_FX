@@ -1,8 +1,4 @@
 /bin
 /.project
 /.classpath
-<<<<<<< HEAD
 /src.database_connection.DBConnection.java
-=======
-/src.database_connection.dbconnection.java
->>>>>>> origin/master

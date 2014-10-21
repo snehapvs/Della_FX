@@ -1,6 +1,5 @@
 package application;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,10 +8,8 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -75,7 +72,7 @@ public class Login_controller implements Initializable {
 
 //		while(!flag)
 		{
-			flag=checkLogin(username.getText(),password.getText());
+			flag=checkLogin(username.getText().trim(),password.getText().trim());
 			if(!flag)
 			{
 				System.out.println("invaid username or password");
@@ -109,6 +106,12 @@ public class Login_controller implements Initializable {
 
 	}
 
+	public String getUsername() {
+		return username.getText().trim();
+	}
+	public void setUsername(TextField username) {
+		this.username = username;
+	}
 	private Statement stmt=null;
 	private boolean checkLogin(String text, String text2) {
 		stmt=Main.getStmt();
