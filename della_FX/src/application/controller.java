@@ -33,11 +33,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 
-=======
 import javafx.stage.StageStyle;
->>>>>>> bbe3499626232837a1c2ca1d7806a768621d9588
 
 public class controller implements Initializable
 {
@@ -64,8 +61,7 @@ public class controller implements Initializable
 	
 	public TextField username;
 	
-<<<<<<< HEAD
-=======
+
 	public Button AddToList_Members;
 	public Button Remove_Members;
 	public Button AddAffliation_Members;
@@ -77,7 +73,7 @@ public class controller implements Initializable
 	public Button RemoveAssociation_Team;
 	
 	
->>>>>>> bbe3499626232837a1c2ca1d7806a768621d9588
+
 
 	public  void disable()
 	{
