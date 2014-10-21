@@ -38,9 +38,9 @@ public class Login_controller implements Initializable {
 
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
-		//	Stage stage = (Stage) login.getScene().getWindow();
+			Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
-		//stage.close();
+		stage.close();
 
 		try {
 			//			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
