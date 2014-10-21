@@ -25,6 +25,17 @@ public class controller implements Initializable
 	public Button create_actionItem;
 	public Button delete_actionItem;
 	
+	public Button AddToList_Members;
+	public Button Remove_Members;
+	public Button AddAffliation_Members;
+	public Button RemoveAffliation_Members;
+	
+	public Button AddToList_Team;
+	public Button Remove_Team;
+	public Button AddAssociation_Team;
+	public Button RemoveAssociation_Team;
+	
+	
 	public  void disable()
 	{
 		System.out.println("in disable function");
@@ -32,6 +43,17 @@ public class controller implements Initializable
 		clear_actionItem.setDisable(true);
 		create_actionItem.setDisable(true);
 		delete_actionItem.setDisable(true);
+		
+		AddToList_Members.setDisable(true);
+		Remove_Members.setDisable(true);
+		AddAffliation_Members.setDisable(true);
+		RemoveAffliation_Members.setDisable(true);
+		
+		AddToList_Team.setDisable(true);
+		Remove_Team.setDisable(true);
+		AddAssociation_Team.setDisable(true);
+		RemoveAssociation_Team.setDisable(true);
+		
 	}
 	public void update_actionItem(){}
 	public void clearForm_actionItem()
@@ -40,6 +62,26 @@ public class controller implements Initializable
 	{}
 	public void deleteItem_actionItem()
 	{}
+	
+	
+	public void AddToList_Members()
+	{}
+	public void Remove_Members()
+	{}
+	public void AddAffliation_Members()
+	{}
+	public void RemoveAffliation_Members()
+	{}
+	
+	public void AddToList_Team()
+	{}
+	public void Remove_Team()
+	{}
+	public void AddAssociation_Team()
+	{}
+	public void RemoveAssociation_Team()
+	{}
+	
 	public void quitWindow()
 	{
 		Statement stmt= Main.getStmt();
