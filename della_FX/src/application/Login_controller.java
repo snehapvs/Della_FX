@@ -35,18 +35,7 @@ public class Login_controller implements Initializable {
 	public TextField password;
 	public Button login;
 
-
-
-
-
-
-
-
 	public  controller c;
-
-
-
-
 
 	public void performlogin(){
 
@@ -95,7 +84,7 @@ public class Login_controller implements Initializable {
 			{
 				try {
 					ResultSet row=stmt.executeQuery("SELECT * FROM USERLOG WHERE lockstatus=1;");
-					System.out.println(row.next());
+					//System.out.println(row.next());
 					if(!row.next())
 					{
 						Date d= new Date();
