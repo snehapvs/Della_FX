@@ -1,19 +1,16 @@
 package application;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class controller implements Initializable
 {
@@ -30,10 +27,9 @@ public class controller implements Initializable
 	public Button clear_actionItem;
 	public Button create_actionItem;
 	public Button delete_actionItem;
-<<<<<<< HEAD
 	public TextField username;
-=======
 	
+	@FXML
 	public Button AddToList_Members;
 	public Button Remove_Members;
 	public Button AddAffliation_Members;
@@ -45,7 +41,6 @@ public class controller implements Initializable
 	public Button RemoveAssociation_Team;
 	
 	
->>>>>>> origin/master
 	public  void disable()
 	{
 		System.out.println("in disable function");
@@ -96,10 +91,10 @@ public class controller implements Initializable
 	{
 		Statement stmt= Main.getStmt();
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Scene scene=new Scene(root);
-			scene.setRoot(root);
+			//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+	//		Parent root = (Parent) fxmlLoader.load();
+		//	Scene scene=new Scene(root);
+			//scene.setRoot(root);
 //			Stage primaryStage = new Stage();
 //			primaryStage.initStyle(StageStyle.UNDECORATED);
 //			primaryStage.setTitle("Dellaaaaaaaaaaaa");
@@ -107,14 +102,15 @@ public class controller implements Initializable
 //			primaryStage.show();
 //
 			
-			Login_controller lc= fxmlLoader.getController();
-			String username=lc.getUsername();
+			//Login_controller lc= fxmlLoader.getController();
+			String username="vaibhav";
+			//lc.getUsername();
 			int row=stmt.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"+username+"';");
 			if(row!=0)
 				System.out.println("Successful updation into userlog by "+username);
 			Stage st= (Stage)quit.getScene().getWindow();
 			st.close();
-		} catch (SQLException | IOException e) {
+		} catch (SQLException  e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

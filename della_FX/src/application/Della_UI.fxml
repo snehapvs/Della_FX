@@ -200,7 +200,7 @@
             </AnchorPane>
           </content>
         </Tab>
-        <Tab fx:id="AddToList_Members" onSelectionChanged="#AddToList_Members" text="Members">
+        <Tab text="Members">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
