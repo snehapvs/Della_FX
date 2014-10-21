@@ -31,7 +31,7 @@ public class Login_controller implements Initializable {
 	public AnchorPane LoginScreen;
 	public TextField password;
 	public Button login;
-
+	public static String uname;
 	public controller c;
 
 	public void performlogin(){
@@ -79,8 +79,10 @@ public class Login_controller implements Initializable {
 				System.exit(1);
 			}else
 			{
+
+				uname= username.getText().trim();
 				try {
-					ResultSet row=stmt.executeQuery("SELECT * FROM USERLOG WHERE lockstatus=1;");
+					ResultSet row=stmt.executeQuery("SELECT * FROM enhanced_della.userlog WHERE lockstatus=1;");
 					//System.out.println(row.next());
 					if(!row.next())
 					{
@@ -107,7 +109,8 @@ public class Login_controller implements Initializable {
 	}
 
 	public String getUsername() {
-		return username.getText().trim();
+		
+		return uname;
 	}
 	public void setUsername(TextField username) {
 		this.username = username;

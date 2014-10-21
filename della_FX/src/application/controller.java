@@ -38,32 +38,20 @@ import javafx.stage.StageStyle;
 
 public class controller implements Initializable
 {
-
-
-	
-
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
 	}
-
-
-
-	public Button button_action;
-
+	//public Button button_action;
+	public Button quit;
 	
 	public Button update_actionItem;
-	public Button quit;
 	public Button clear_actionItem;
 	public Button create_actionItem;
 	public Button delete_actionItem;
 
 	public TextField username;
-
 	
-	
-
 	public Button AddToList_Members;
 	public Button Remove_Members;
 	public Button AddAffliation_Members;
@@ -78,7 +66,7 @@ public class controller implements Initializable
 	public  void disable()
 	{
 		System.out.println("in disable function");
-		button_action.setDisable(true);
+		//button_action.setDisable(true);
 		update_actionItem.setDisable(true);
 		clear_actionItem.setDisable(true);
 		create_actionItem.setDisable(true);
@@ -126,7 +114,7 @@ public class controller implements Initializable
 	{
 		Statement stmt= Main.getStmt();
 		try {
-			//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
 	//		Parent root = (Parent) fxmlLoader.load();
 		//	Scene scene=new Scene(root);
 			//scene.setRoot(root);
@@ -137,9 +125,9 @@ public class controller implements Initializable
 //			primaryStage.show();
 //
 			
-			//Login_controller lc= fxmlLoader.getController();
-			String username="vaibhav";
-			//lc.getUsername();
+		//	Login_controller lc= fxmlLoader.getController();
+			String username="";
+			username=new Login_controller().getUsername();
 			int row=stmt.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"+username+"';");
 			if(row!=0)
 				System.out.println("Successful updation into userlog by "+username);
