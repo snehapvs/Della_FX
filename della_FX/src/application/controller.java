@@ -12,7 +12,6 @@ import model.ActionItemManager;
 import control.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -23,17 +22,10 @@ import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-import javafx.stage.StageStyle;
 
 
 public class controller implements Initializable
@@ -114,18 +106,6 @@ public class controller implements Initializable
 	{
 		Statement stmt= Main.getStmt();
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
-	//		Parent root = (Parent) fxmlLoader.load();
-		//	Scene scene=new Scene(root);
-			//scene.setRoot(root);
-//			Stage primaryStage = new Stage();
-//			primaryStage.initStyle(StageStyle.UNDECORATED);
-//			primaryStage.setTitle("Dellaaaaaaaaaaaa");
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-//
-			
-		//	Login_controller lc= fxmlLoader.getController();
 			String username="";
 			username=new Login_controller().getUsername();
 			int row=stmt.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"+username+"';");
