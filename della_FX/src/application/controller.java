@@ -1,12 +1,8 @@
 package application;
 
 import java.net.URL;
-<<<<<<< HEAD
-
-=======
 import java.sql.SQLException;
 import java.sql.Statement;
->>>>>>> origin/master
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
@@ -20,8 +16,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
-
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -35,10 +29,6 @@ import javafx.stage.Stage;
 
 import javafx.stage.StageStyle;
 
-public class controller implements Initializable {
-
-=======
-import javafx.stage.Stage;
 import model.ActionItem;
 import model.ActionItemManager;
 import control.Controller;
@@ -48,31 +38,23 @@ import control.Controller;
 
 public class controller implements Initializable
 {
->>>>>>> origin/master
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
-<<<<<<< HEAD
 
 	public Button button_action;
 
-=======
 	//public Button button_action;
 	public Button quit;
 	
 	@FXML
->>>>>>> origin/master
 	public Button update_actionItem;
 	public Button clear_actionItem;
 	public Button create_actionItem;
 	public Button delete_actionItem;
 
 	public TextField username;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> origin/master
 	public Button AddToList_Members;
 	public Button Remove_Members;
 	public Button AddAffliation_Members;
@@ -92,12 +74,7 @@ public class controller implements Initializable
 		clear_actionItem.setDisable(true);
 		create_actionItem.setDisable(true);
 		delete_actionItem.setDisable(true);
-<<<<<<< HEAD
 
-=======
-		
-		
->>>>>>> origin/master
 		AddToList_Members.setDisable(true);
 		Remove_Members.setDisable(true);
 		AddAffliation_Members.setDisable(true);
@@ -149,7 +126,6 @@ public class controller implements Initializable
 	public void quitWindow() {
 		Statement stmt = Main.getStmt();
 		try {
-<<<<<<< HEAD
 			// FXMLLoader fxmlLoader = new
 			// FXMLLoader(getClass().getResource("Login.fxml"));
 			// Parent root = (Parent) fxmlLoader.load();
@@ -163,23 +139,12 @@ public class controller implements Initializable
 			//
 
 			// Login_controller lc= fxmlLoader.getController();
-			String username = "vaibhav";
-			// lc.getUsername();
-			int row = stmt
-					.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"
-							+ username + "';");
-			if (row != 0)
-				System.out.println("Successful updation into userlog by "
-						+ username);
-			Stage st = (Stage) quit.getScene().getWindow();
-=======
 			String username="";
 			username=new Login_controller().getUsername();
 			int row=stmt.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"+username+"';");
 			if(row!=0)
 				System.out.println("Successful updation into userlog by "+username);
 			Stage st= (Stage)quit.getScene().getWindow();
->>>>>>> origin/master
 			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
