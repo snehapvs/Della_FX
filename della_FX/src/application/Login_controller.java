@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,27 +43,17 @@ public class Login_controller implements Initializable {
 		// do what you have to do
 		stage.close();
 
+		FXMLLoader fxmlLoader = null;
 		try {
-			//			Parent parent = FXMLLoader.load(getClass().getResource("Della_UI.fxml"));//ur fxml file name
-			//			Scene scene = new Scene(parent);
-			//			primaryStage.setTitle("Dellaaa");
-			//			primaryStage.setScene(scene);
-			//			primaryStage.show();
-
-
-			//			Node node = (Node) event.getSource();
-			//			Stage stag = (Stage) node.getScene().getWindow();
-			//			Scene scene = stag.getScene();
-
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Scene scene=new Scene(root);
-			scene.setRoot(root);
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.setTitle("Dellaaa");
-			primaryStage.setScene(scene);
-			primaryStage.show();
-
+			 fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
+			 Parent root = (Parent) fxmlLoader.load();
+				Scene scene=new Scene(root);
+				scene.setRoot(root);
+				primaryStage.initStyle(StageStyle.UNDECORATED);
+				primaryStage.setTitle("Dellaaa");
+				primaryStage.setScene(scene);
+				primaryStage.show();
+			 
 
 			c=fxmlLoader.getController();
 
@@ -82,17 +73,17 @@ public class Login_controller implements Initializable {
 
 				uname= username.getText().trim();
 				try {
-					ResultSet row=stmt.executeQuery("SELECT * FROM enhanced_della.userlog WHERE lockstatus=1;");
-					//System.out.println(row.next());
+					ResultSet row=stmt.executeQuery("SELECT * FROM userlog WHERE lockstatus = 1 ;");
 					if(!row.next())
 					{
+						//System.out.println(row.getString("username"));
 						Date d= new Date();
 						Timestamp stamp= new Timestamp(d.getTime());
 						System.out.println(stamp.toString());
 						stmt.executeUpdate("INSERT INTO USERLOG(USERNAME,LOGINTIME,LOCKSTATUS) VALUES('"+username.getText()+"','"+stamp+"', 1);");
 					}
 					else{
-
+						//System.out.println("check 1");
 						c.disable();
 					}
 				} catch (SQLException e) {
@@ -102,10 +93,7 @@ public class Login_controller implements Initializable {
 			}
 			password.setText("");
 		}
-
-
-
-
+	
 	}
 
 	public String getUsername() {

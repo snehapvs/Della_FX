@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 
 
-<AnchorPane prefHeight="560.0" prefWidth="738.0000168945262" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
+<AnchorPane  fx:id="DellaScreen" prefHeight="560.0" prefWidth="738.0000168945262" disable="false" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller">
   <!-- TODO Add Nodes -->
   <children> 
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="525.0" prefWidth="738.0" tabClosingPolicy="UNAVAILABLE">
@@ -193,12 +193,6 @@
                 <Label font="$x1" layoutX="175.0" layoutY="87.0" text="First Sorting Factor:" />
                 <Label font="$x1" layoutX="328.0" layoutY="87.0" text="Second Sorting Factor:" />
                 <Label font="$x1" layoutX="482.0" layoutY="87.0" text="Inclusion Factor:" />
-                <Button fx:id="update" layoutX="26.0" layoutY="438.0" mnemonicParsing="false" prefWidth="153.0" text="Update This Action Item" />
-                <Button fx:id="update" layoutX="26.0" layoutY="438.0" mnemonicParsing="false" prefWidth="153.0" text="Update This Action Item" />
-                <Button fx:id="update" layoutX="26.0" layoutY="438.0" mnemonicParsing="false" prefWidth="153.0" text="Update This Action Item" />
-                <Button layoutX="483.0" layoutY="438.0" mnemonicParsing="false" prefWidth="153.0" text="Delete This Action Item" />
-                <Button layoutX="312.0" layoutY="438.0" mnemonicParsing="false" prefWidth="169.0" text="Create a new Action Item" />
-                <Button layoutX="181.0" layoutY="438.0" mnemonicParsing="false" prefWidth="129.0" text="Clear this form" />
                 <Button fx:id="update_actionItem" layoutX="26.0" layoutY="438.0" mnemonicParsing="false" onAction="#update_actionItem" prefWidth="153.0" text="Update This Action Item" />
                 <Button fx:id="delete_actionItem" layoutX="483.0" layoutY="438.0" mnemonicParsing="false" onAction="#deleteItem_actionItem" prefWidth="153.0" text="Delete This Action Item" />
                 <Button fx:id="create_actionItem" layoutX="312.0" layoutY="438.0" mnemonicParsing="false" onAction="#createNew_actionItem" prefWidth="169.0" text="Create a new Action Item" />

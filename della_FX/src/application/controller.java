@@ -1,17 +1,14 @@
 package application;
 
 import java.net.URL;
-
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
-import model.ActionItem;
-import model.ActionItemManager;
-import control.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -19,11 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import javafx.stage.Stage;
+import model.ActionItem;
+import model.ActionItemManager;
+import control.Controller;
 
 
 
@@ -37,6 +33,7 @@ public class controller implements Initializable
 	//public Button button_action;
 	public Button quit;
 	
+	@FXML
 	public Button update_actionItem;
 	public Button clear_actionItem;
 	public Button create_actionItem;
@@ -60,9 +57,12 @@ public class controller implements Initializable
 		System.out.println("in disable function");
 		//button_action.setDisable(true);
 		update_actionItem.setDisable(true);
+//		update_actionItem.cancelButtonProperty()
+	//	System.out.println("--->"+update_actionItem.cancelButtonProperty().get());
 		clear_actionItem.setDisable(true);
 		create_actionItem.setDisable(true);
 		delete_actionItem.setDisable(true);
+		
 		
 		AddToList_Members.setDisable(true);
 		Remove_Members.setDisable(true);
