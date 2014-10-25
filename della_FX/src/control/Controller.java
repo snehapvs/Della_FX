@@ -78,6 +78,7 @@ public class Controller {
 	 * Save the current controller and all of the data objects rooted here to the persistent store
 	 */
 	public void save() {
+		
 		dirtyFlag = false;
 		
 		DataManager.writeData(this);
