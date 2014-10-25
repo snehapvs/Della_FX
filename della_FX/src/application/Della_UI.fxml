@@ -27,21 +27,11 @@ import control.Controller;
 
 public class controller_class implements Initializable
 {
-
-
-
-
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
 	}
-
-
-
 	public Button button_action;
-
-
 	public Button update_actionItem;
 	public Button quit;
 	public Button clear_actionItem;

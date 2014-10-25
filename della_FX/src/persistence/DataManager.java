@@ -147,9 +147,7 @@ public class DataManager {
 
 			actionItem=(ActionItem) controller.getActionItemManager().getActionItemList().get(i);
 			System.out.println(actionItem.getDueDate());
-			string="insert into actionitemList values(";
-			
-			
+			string="insert into actionitemList values(";			
 			string=string+"'"+actionItem.getActionItemName()+"','"+actionItem.getDescription()
 					+"','"+actionItem.getResolution()+"','"+actionItem.getStatus()+"','"+new java.sql.Timestamp( actionItem.getCreatedDate().getTime())
 					+"','"+actionItem.getAssignedMember()+"','"+actionItem.getAssignedTeam()+"',";
