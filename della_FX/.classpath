@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="xpp3-1.1.3.4d_b4_min.jar"/>
 	<classpathentry kind="lib" path="xstream-1.4.7.jar"/>
 	<classpathentry kind="lib" path="jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sneha/Desktop/jars/javafx-dialogs-0.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

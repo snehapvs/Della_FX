@@ -33,7 +33,7 @@ public class Login_controller implements Initializable {
 	public TextField password;
 	public Button login;
 	public static String uname;
-	public controller c;
+	public controller_class c;
 
 	public void performlogin(){
 
