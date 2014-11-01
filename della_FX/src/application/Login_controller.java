@@ -18,6 +18,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Dialogs;
+import javafx.scene.control.Dialogs.DialogOptions;
+import javafx.scene.control.Dialogs.DialogResponse;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,27 +47,10 @@ public class Login_controller implements Initializable {
 
 		Stage primaryStage = new Stage();
 		System.out.println("Starting login screen");
-			Stage stage = (Stage) login.getScene().getWindow();
+		Stage stage = (Stage) login.getScene().getWindow();
 		// do what you have to do
-		stage.close();
 
-		FXMLLoader fxmlLoader = null;
-		try {
-			 fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
-			 Parent root = (Parent) fxmlLoader.load();
-				Scene scene=new Scene(root);
-				scene.setRoot(root);
-				primaryStage.initStyle(StageStyle.UNDECORATED);
-				primaryStage.setTitle("Dellaaa");
-				primaryStage.setScene(scene);
-				primaryStage.show();
-			 
 
-			c=fxmlLoader.getController();
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
 
 		if(new Synchronization().isUserOnline())
 		{
@@ -72,9 +58,28 @@ public class Login_controller implements Initializable {
 			if(!flag)
 			{
 				System.out.println("invaid username or password");
-				System.exit(1);
+				Dialogs.showErrorDialog(stage, "invalid username or password",
+						"Error!");
 			}else
 			{
+				FXMLLoader fxmlLoader = null;
+				try {
+					stage.close();
+					fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Scene scene=new Scene(root);
+					scene.setRoot(root);
+					primaryStage.initStyle(StageStyle.UNDECORATED);
+					primaryStage.setTitle("Dellaaa");
+					primaryStage.setScene(scene);
+					primaryStage.show();
+
+
+					c=fxmlLoader.getController();
+
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 
 				uname= username.getText().trim();
 				try {
@@ -96,27 +101,45 @@ public class Login_controller implements Initializable {
 					e.printStackTrace();
 				}
 			}
+			username.setText("");
 			password.setText("");
 		}
 		else
 		{
 			Properties props=null;
 			props= new Properties();
-			String pass=null,user=null;
-		
 			try {
-				
+
 				in= new FileInputStream(new File("login.properties"));
 				props.load(in);
 				if(username.getText().trim().equals(props.getProperty("username"))
 						&& password.getText().trim().equals(props.getProperty("password")))
 				{
-					
-				}else
+					FXMLLoader fxmlLoader = null;
+					try {
+						stage.close();
+						fxmlLoader = new FXMLLoader(getClass().getResource("Della_UI.fxml"));
+						Parent root = (Parent) fxmlLoader.load();
+						Scene scene=new Scene(root);
+						scene.setRoot(root);
+						primaryStage.initStyle(StageStyle.UNDECORATED);
+						primaryStage.setTitle("Dellaaa");
+						primaryStage.setScene(scene);
+						primaryStage.show();
+
+
+						c=fxmlLoader.getController();
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+					}
+
+				}
+				else
 				{
 					System.out.println("invalid username or password");
 				}
-				
+
 			} catch (IOException e) {
 				System.out.println("File not found properties.config");
 				e.printStackTrace();
@@ -131,11 +154,11 @@ public class Login_controller implements Initializable {
 				}
 			}
 		}
-	
+
 	}
 
 	public String getUsername() {
-		
+
 		return uname;
 	}
 	public void setUsername(TextField username) {

@@ -192,9 +192,6 @@
                 <Label font="$x1" layoutX="175.0" layoutY="87.0" text="First Sorting Factor:" />
                 <Label font="$x1" layoutX="328.0" layoutY="87.0" text="Second Sorting Factor:" />
                 <Label font="$x1" layoutX="482.0" layoutY="87.0" text="Inclusion Factor:" />
-                <Button layoutX="483.0" layoutY="438.0" mnemonicParsing="false" prefWidth="153.0" text="Delete This Action Item" />
-                <Button layoutX="312.0" layoutY="438.0" mnemonicParsing="false" prefWidth="169.0" text="Create a new Action Item" />
-                <Button layoutX="181.0" layoutY="438.0" mnemonicParsing="false" prefWidth="129.0" text="Clear this form" />
                 <Button fx:id="updateButton" layoutX="26.0" layoutY="438.0" mnemonicParsing="false" onAction="#updateActionItem" prefWidth="153.0" text="Update This Action Item" />
                 <Button fx:id="deleteButton" layoutX="483.0" layoutY="438.0" mnemonicParsing="false" onAction="#deleteActionItem" prefWidth="153.0" text="Delete This Action Item" />
                 <Button fx:id="createButton" layoutX="312.0" layoutY="438.0" mnemonicParsing="false" onAction="#createActionItem" prefWidth="169.0" text="Create a new Action Item" />

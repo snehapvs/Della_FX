@@ -63,6 +63,7 @@ public class Controller {
 		dirtyFlag = false;
 		
 		DataManager.writeData(this);
+		DataManager.writeDataDB(this);
 	}
 	// The usual collection of getters and setters
 	public ActionItemManager getActionItemManager() { return actionItemManager; }

@@ -7,6 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
+import persistence.DataManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -31,79 +34,29 @@ public class controller_class implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
 
-	public Button button_action;
 
-	public Button update_actionItem;
-	public Button quit;
-	public Button clear_actionItem;
-	public Button create_actionItem;
-	public Button delete_actionItem;
 	public TextField username;
-	public Button AddToList_Members;
-	public Button Remove_Members;
-	public Button AddAffliation_Members;
-	public Button RemoveAffliation_Members;
-	public Button AddToList_Team;
-	public Button Remove_Team;
-	public Button AddAssociation_Team;
-	public Button RemoveAssociation_Team;
+	public Button quit;
 
 	public void disable() {
 		System.out.println("in disable function");
-		button_action.setDisable(true);
-		update_actionItem.setDisable(true);
-		clear_actionItem.setDisable(true);
-		create_actionItem.setDisable(true);
-		delete_actionItem.setDisable(true);
+//		button_action.setDisable(true);
+		updateButton.setDisable(true);
+		clearButton.setDisable(true);
+		createButton.setDisable(true);
+		deleteButton.setDisable(true);
 
-		AddToList_Members.setDisable(true);
-		Remove_Members.setDisable(true);
-		AddAffliation_Members.setDisable(true);
-		RemoveAffliation_Members.setDisable(true);
+		addMemberButton.setDisable(true);
+		removeMemberButton.setDisable(true);
+		addMemberAssociationButton.setDisable(true);
+		removeMemberAssociationButton.setDisable(true);
 
-		AddToList_Team.setDisable(true);
-		Remove_Team.setDisable(true);
-		AddAssociation_Team.setDisable(true);
-		RemoveAssociation_Team.setDisable(true);
+		addTeamButton.setDisable(true);
+		removeTeamButton.setDisable(true);
+		addTeamAffiliationButton.setDisable(true);
+		removeTeamAffiliationButton.setDisable(true);
 
 	}
-
-	public void update_actionItem() {
-	}
-
-	public void clearForm_actionItem() {
-	}
-
-	public void createNew_actionItem() {
-	}
-
-	public void deleteItem_actionItem() {
-	}
-
-	public void AddToList_Members() {
-	}
-
-	public void Remove_Members() {
-	}
-
-	public void AddAffliation_Members() {
-	}
-
-	public void RemoveAffliation_Members() {
-	}
-
-	public void AddToList_Team() {
-	}
-
-	public void Remove_Team() {
-	}
-
-	public void AddAssociation_Team() {
-	}
-
-	public void RemoveAssociation_Team() {
-	}
-
 	public void quitWindow() {
 		Statement stmt = Main.getStmt();
 		try {
@@ -125,9 +78,26 @@ public class controller_class implements Initializable {
 			int row = stmt
 					.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"
 							+ username + "';");
-			if (row != 0)
+			if (row != 0){
 				System.out.println("Successful updation into userlog by "
 						+ username);
+				theController = Controller.getInstance();
+					if (theController.getDirtyFlag()) {
+						int x = JOptionPane.showConfirmDialog(null,
+								" \n" +
+								"A Quit has been requested and there are updated     \n" +
+								"          Action Items that have not been saved!\n\n" +
+								"Do you want to save these Action Items?\n\n" + 
+								"Click \"Yes\" to save the changed Action Items.\n\n" + 
+								"Click \"No\" to ignore the changes.",
+								"Quit requested with unsaved Action Items!\n",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.YES_NO_OPTION);
+						if (x == 0) { 
+							theController.save(); 
+						}
+					}
+			}
 			Stage st = (Stage) quit.getScene().getWindow();
 			st.close();
 		} catch (SQLException e) {
