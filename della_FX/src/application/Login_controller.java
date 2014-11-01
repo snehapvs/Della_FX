@@ -1,5 +1,8 @@
 package application;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -7,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
@@ -18,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import persistence.Synchronization;
 
 
 public class Login_controller implements Initializable {
@@ -34,7 +39,7 @@ public class Login_controller implements Initializable {
 	public Button login;
 	public static String uname;
 	public controller_class c;
-
+	private static  FileInputStream in= null;			
 	public void performlogin(){
 
 		Stage primaryStage = new Stage();
@@ -61,7 +66,7 @@ public class Login_controller implements Initializable {
 			e.printStackTrace();
 		}
 
-//		while(!flag)
+		if(new Synchronization().isUserOnline())
 		{
 			flag=checkLogin(username.getText().trim(),password.getText().trim());
 			if(!flag)
@@ -92,6 +97,39 @@ public class Login_controller implements Initializable {
 				}
 			}
 			password.setText("");
+		}
+		else
+		{
+			Properties props=null;
+			props= new Properties();
+			String pass=null,user=null;
+		
+			try {
+				
+				in= new FileInputStream(new File("login.properties"));
+				props.load(in);
+				if(username.getText().trim().equals(props.getProperty("username"))
+						&& password.getText().trim().equals(props.getProperty("password")))
+				{
+					
+				}else
+				{
+					System.out.println("invalid username or password");
+				}
+				
+			} catch (IOException e) {
+				System.out.println("File not found properties.config");
+				e.printStackTrace();
+			}
+			finally
+			{
+				try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 	
 	}

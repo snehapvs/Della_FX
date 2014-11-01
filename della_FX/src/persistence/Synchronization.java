@@ -1,6 +1,9 @@
 
 package persistence;
 
+import java.net.URL;
+import java.net.URLConnection;
+
 /**
  * */
 public class Synchronization {
@@ -11,7 +14,17 @@ private boolean userOnline = true;
 * @return boolean
 */
 public final boolean isUserOnline() {
-return userOnline;
+	try {
+		URL url = new URL("http://www.google.com/");
+		URLConnection conn = url.openConnection();
+		System.out.println();
+		conn.connect();
+		return userOnline;
+		// System.out.println("its Working Fine ! ");
+	} catch (Exception e) {
+		return !userOnline;
+		//System.out.println("Not Working");
+	}
 }
 /** Updating the database from the local cache.
 */

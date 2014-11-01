@@ -1,16 +1,18 @@
 package persistence;
 
-import java.io.*;
-import java.net.ConnectException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 
-import model.AccessItem;
 import model.ActionItem;
 import model.Element;
 import model.ElementList;
@@ -19,6 +21,7 @@ import com.mysql.jdbc.Statement;
 import com.thoughtworks.xstream.XStream;
 
 import control.Controller;
+import database_connection.DBConnection;
 
 /**
  * <p>

@@ -55,25 +55,6 @@ public class Controller {
 		}
 		return theController;
 	}
-
-	/**
-	 * check whether Internet is working or not 
-	 */
-	public boolean checkinternet()
-	{
-		try {
-			URL url = new URL("http://www.google.com/");
-			URLConnection conn = url.openConnection();
-			System.out.println();
-			conn.connect();
-			return true;
-			// System.out.println("its Working Fine ! ");
-		} catch (Exception e) {
-			return false;
-			//System.out.println("Not Working");
-		}
-
-	}
 	/**
 	 * Save the current controller and all of the data objects rooted here to the persistent store
 	 */
