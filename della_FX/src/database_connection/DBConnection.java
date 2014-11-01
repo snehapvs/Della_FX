@@ -21,7 +21,7 @@ public DBConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Going to establish a connection");
-			con = (Connection) DriverManager.getConnection("jdbc:mysql://10.10.11.81:3306/enhanced_della","team5","team5");
+			con = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.50.1:3306/enhanced_della","team5","team5");
 			System.out.println("Connection Established....");
 		} catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();

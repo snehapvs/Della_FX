@@ -2474,5 +2474,53 @@ public class controller_class implements Initializable {
 	}
 
 	// team screen
+	
+	
+	public void doQuit() {
+		if (okayToChangeScreens()){
+			if (theController.getDirtyFlag()) {
+				
+				Stage stage=new Stage();
+				DialogResponse response = Dialogs.showConfirmDialog(stage, 
+						"A Quit has been requested and there are updated     \n" +
+						"          Action Items that have not been saved!\n\n" +
+						"Do you want to save these Action Items?\n\n" + 
+						"Click \"Yes\" to save the changed Action Items.\n\n" + 
+						"Click \"No\" to ignore the changes.",
+						"Quit requested with unsaved Action Items!\n", "Confirm Dialog");
+				if(response.equals("YES"))
+				{
+					theController.save();
+				}
+				
+				
+			}
+			System.exit(0);
+		}
 
+}
+	
+	private boolean okayToChangeScreens(){
+		ActionItemManager aiM = theController.getActionItemManager();
+		if (aiM.getEditChangesPending()) {
+			Stage stage=new Stage();
+			DialogResponse response = Dialogs.showConfirmDialog(stage, 
+					"A Screen Change or a Quit has been requested and there     \n" +
+							"          are pending edits to this Action Item!\n\n" +
+							"Do you want to discard these edits?\n\n" +
+							"Click \"Yes\" to discard these edits.\n\n" +
+							"Click \"No\" to return to Action Items Screen.\n ",
+							"Screen Change or Quit Requested with Pending Edits!", "Confirm Dialog");
+			if(response.equals("YES"))
+			{
+				aiM.setEditChangesPending(false);
+				return true;
+			}
+			
+			
+			else return false;
+		}
+		else
+			return true;
+	}
 }
