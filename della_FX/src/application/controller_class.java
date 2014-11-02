@@ -60,43 +60,14 @@ public class controller_class implements Initializable {
 	public void quitWindow() {
 		Statement stmt = Main.getStmt();
 		try {
-			// FXMLLoader fxmlLoader = new
-			// FXMLLoader(getClass().getResource("Login.fxml"));
-			// Parent root = (Parent) fxmlLoader.load();
-			// Scene scene=new Scene(root);
-			// scene.setRoot(root);
-			// Stage primaryStage = new Stage();
-			// primaryStage.initStyle(StageStyle.UNDECORATED);
-			// primaryStage.setTitle("Dellaaaaaaaaaaaa");
-			// primaryStage.setScene(scene);
-			// primaryStage.show();
-			//
-
-			// Login_controller lc= fxmlLoader.getController();
 			String username = "vaibhav";
-			// lc.getUsername();
 			int row = stmt
 					.executeUpdate("UPDATE enhanced_della.userlog SET lockstatus=0 WHERE lockstatus =1 and USERNAME= '"
 							+ username + "';");
 			if (row != 0){
 				System.out.println("Successful updation into userlog by "
 						+ username);
-				theController = Controller.getInstance();
-					if (theController.getDirtyFlag()) {
-						int x = JOptionPane.showConfirmDialog(null,
-								" \n" +
-								"A Quit has been requested and there are updated     \n" +
-								"          Action Items that have not been saved!\n\n" +
-								"Do you want to save these Action Items?\n\n" + 
-								"Click \"Yes\" to save the changed Action Items.\n\n" + 
-								"Click \"No\" to ignore the changes.",
-								"Quit requested with unsaved Action Items!\n",
-								JOptionPane.YES_NO_OPTION,
-								JOptionPane.YES_NO_OPTION);
-						if (x == 0) { 
-							theController.save(); 
-						}
-					}
+				doQuit();
 			}
 			Stage st = (Stage) quit.getScene().getWindow();
 			st.close();
